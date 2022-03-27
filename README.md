@@ -1,7 +1,6 @@
-## Next.js + Firebase - The Full Course
+## NXT-Blogger
 
-- [Live Demo](https://next.fireship.io/)
-- [Enroll in the Course](https://fireship.io/courses/react-next-firebase/)
+- [Live Demo][https://nxt-blogger-puw3dqfu3-dipendra-creator.vercel.app/]
 
 Become an expert at React, Next.js, and Firebase by building a social blogging community from scratch. 
 
