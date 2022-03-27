@@ -1,6 +1,6 @@
 ## NXT-Blogger
 
-- [Live Demo][https://nxt-blogger-puw3dqfu3-dipendra-creator.vercel.app/]
+- [Live Demo][https://nxt-blogger.vercel.app/]
 
 Become an expert at React, Next.js, and Firebase by building a social blogging community from scratch. 
 
