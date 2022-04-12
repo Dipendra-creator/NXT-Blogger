@@ -6,7 +6,7 @@ import { firestore, fromMillis, postToJSON } from '../lib/firebase';
 import { useState } from 'react';
 
 // Max post to query per page
-const LIMIT = 10;
+const LIMIT = 9;
 
 export async function getServerSideProps(context) {
   const postsQuery = firestore
@@ -56,12 +56,12 @@ export default function Home(props) {
     <main>
       <Metatags title="Home Page" description="Get the latest posts on our site" />
 
-      <div className="card card-info">
+      <div className="card-info">
         <h2>💡NXT- Blogger </h2>
         <p>Welcome! This app is built with Next.js and Firebase and is loosely inspired by Dev.to.</p>
         <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 heart content created by other users. All public content is server-rendered and search-engine optimized.</p>
       </div>
-     
+
       <PostFeed posts={posts} />
 
       {!loading && !postsEnd && <button onClick={getMorePosts}>Load more</button>}

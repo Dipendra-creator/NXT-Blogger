@@ -18,7 +18,10 @@ body {
   margin-top: 50px;
 }
 
-
+/* some classes */
+.h500{
+  height: 500px;
+}
 
 main {
   padding: 1rem 10vw;
@@ -167,7 +170,6 @@ button.btn-logo {
 }
 
 /* Cards */
-
 .card {
   padding: 2rem;
   margin: 1rem 0;
@@ -176,6 +178,17 @@ button.btn-logo {
   border-radius: 8px;
 }
 
+
+.card2 {
+  padding: 2rem;
+  margin: 1rem 0;
+  background-color: white;
+  border: 1px solid var(--color-gray);
+  border-radius: 8px;
+  height: 250px;
+  border: 1px solid;
+  box-shadow: 5px 10px #888888;
+}
 .card footer {
   display: flex;
 }
@@ -189,6 +202,12 @@ button.btn-logo {
 }
 
 .card-info {
+  padding: 2rem;
+  margin: 1rem 0;
+  background-color: white;
+  border: 1px solid var(--color-gray);
+  border-radius: 8px;
+  /* height: 200px; */
   color: white;
   background: var(--color-blue);
 }
@@ -269,7 +288,7 @@ input[type="file"] {
 
 .container {
   background-color: white;
-  height: 500px;
+  /* height: 500px; */
   width: 500px;
   border-radius: 20px;
   border: 1px solid;
@@ -289,5 +308,29 @@ input[type="file"] {
 .login-img{
   width: 100px;
   height: auto;
+}
 
+.grid-container {
+  display: grid;
+  padding: 10px;
+  width: 100%;
+  grid-template-columns: auto auto auto;
+}
+
+.grid-item {
+  text-align: center;
+  margin: 8px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .grid-container {
+    grid-template-columns: auto;
+  }
 }
