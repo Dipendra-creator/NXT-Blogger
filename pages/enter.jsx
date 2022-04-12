@@ -1,6 +1,7 @@
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { UserContext } from '../lib/context';
 import Metatags from '../components/Metatags';
+import styles from '../styles/Login.module.css';
 
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
@@ -26,14 +27,21 @@ function SignInButton() {
   };
 
   return (
-    <>
-      <button className="btn-google" onClick={signInWithGoogle}>
-        <img src={'/google.png'} width="30px" /> Sign in with Google
-      </button>
-      <button onClick={() => auth.signInAnonymously()}>
-        Sign in Anonymously
-      </button>
-    </>
+    <div className="center" >
+      <div className="center container">
+        <div className="login-section">
+        <img className='login-img' src={'/hacker.png'} />
+          <h3>Welcome!</h3>  
+          
+          <button className="login-btn btn-google" onClick={signInWithGoogle}>
+            <img src={'/google.png'} width="30px" /> Sign in with Google
+          </button>
+          <button className='login-btn' onClick={() => auth.signInAnonymously()}>
+            Sign in Anonymously
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 

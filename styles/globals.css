@@ -260,3 +260,34 @@ input[type="file"] {
 }
 
 .hidden { display:  none; }
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: white;
+  height: 500px;
+  width: 500px;
+  border-radius: 20px;
+  border: 1px solid;
+  box-shadow: 5px 10px #888888;
+}
+
+.login-section {
+  text-align: center;
+  width: 250px;
+}
+
+.login-btn {
+  height: 60px;
+  width: 250px;
+}
+
+.login-img{
+  width: 100px;
+  height: auto;
+
+}
