@@ -327,10 +327,24 @@ input[type="file"] {
   margin: 8px;
 }
 
+.error-head {
+  font-size: 22px;
+}
+.error {
+  font-size: 22px;
+  color: red;
+}
+.error-text {
+  font-size: 11px;
+}
+
 
 @media only screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: auto auto;
+  }
+  .error-section {
+    text-align: center;
   }
 }
 
