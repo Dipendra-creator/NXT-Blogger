@@ -156,6 +156,11 @@ button.btn-google {
   color: var(--color-text);
 }
 
+button.btn-github {
+  background-color: var(--color-gray);
+  color: var(--color-text);
+}
+
 .btn-google img {
   width: 30px;
   margin-right: 10px;
@@ -290,9 +295,9 @@ input[type="file"] {
   background-color: white;
   /* height: 500px; */
   width: 500px;
-  border-radius: 20px;
-  border: 1px solid;
-  box-shadow: 5px 10px #888888;
+  border-radius: 10px;
+  border: 1px solid var(--color-gray);
+  box-shadow: 5px 10px var(--color-gray);
 }
 
 .login-section {
@@ -334,3 +339,4 @@ input[type="file"] {
     grid-template-columns: auto;
   }
 }
+

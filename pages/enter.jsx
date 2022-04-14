@@ -1,4 +1,4 @@
-import { auth, firestore, googleAuthProvider } from '../lib/firebase';
+import { auth, firestore, googleAuthProvider, facebookAuthProvider, githubAuthProvider} from '../lib/firebase';
 import { UserContext } from '../lib/context';
 import Metatags from '../components/Metatags';
 import styles from '../styles/Login.module.css';
@@ -9,9 +9,6 @@ import debounce from 'lodash.debounce';
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
 
-  // 1. user signed out <SignInButton />
-  // 2. user signed in, but missing username <UsernameForm />
-  // 3. user signed in, has username <SignOutButton />
   return (
     <main>
       <Metatags title="Enter" description="Sign up for this amazing app!" />
@@ -25,6 +22,9 @@ function SignInButton() {
   const signInWithGoogle = async () => {
     await auth.signInWithPopup(googleAuthProvider);
   };
+  const signInWithGithub = async () => {
+    await auth.signInWithPopup(githubAuthProvider);
+  };
 
   return (
     <div className="center" >
@@ -32,9 +32,14 @@ function SignInButton() {
         <div className="login-section">
         <img className='login-img' src={'/hacker.png'} />
           <h3>Welcome!</h3>  
-          
+          <p><b>NXT Community</b> is a community of 1 amazing developer 😂</p>
           <button className="login-btn btn-google" onClick={signInWithGoogle}>
-            <img src={'/google.png'} width="30px" /> Sign in with Google
+            <img src={'/google.png'} width="30px" /> 
+            Sign in with Google
+          </button>
+          <button className="login-btn .btn-github" onClick={signInWithGithub}>
+            <img src={'/github.png'} width="30px" /> 
+            Sign in with Github
           </button>
           <button className='login-btn' onClick={() => auth.signInAnonymously()}>
             Sign in Anonymously
