@@ -37,8 +37,8 @@ function SignInButton() {
             <img src={'/google.png'} width="30px" /> 
             Sign in with Google
           </button>
-          <button className="login-btn .btn-github" onClick={signInWithGithub}>
-            <img src={'/github.png'} width="30px" /> 
+          <button className="login-btn btn-github" onClick={signInWithGithub}>
+            <img src={'/github.png'} width="30px" />  
             Sign in with Github
           </button>
           <button className='login-btn' onClick={() => auth.signInAnonymously()}>
