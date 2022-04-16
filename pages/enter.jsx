@@ -1,8 +1,6 @@
 import { auth, firestore, googleAuthProvider, facebookAuthProvider, githubAuthProvider} from '../lib/firebase';
 import { UserContext } from '../lib/context';
 import Metatags from '../components/Metatags';
-import styles from '../styles/Login.module.css';
-
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
 
@@ -20,10 +18,18 @@ export default function Enter(props) {
 // Sign in with Google button
 function SignInButton() {
   const signInWithGoogle = async () => {
-    await auth.signInWithPopup(googleAuthProvider);
+    try {
+      await auth.signInWithPopup(googleAuthProvider);
+    } catch (error) {
+      alert(error.message);
+    }
   };
   const signInWithGithub = async () => {
-    await auth.signInWithPopup(githubAuthProvider);
+    try {
+      await auth.signInWithPopup(githubAuthProvider);
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
