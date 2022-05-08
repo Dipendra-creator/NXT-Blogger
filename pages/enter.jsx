@@ -6,12 +6,11 @@ import debounce from 'lodash.debounce';
 
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
-
   return (
-    <main>
+    <div className='background'>
       <Metatags title="Enter" description="Sign up for this amazing app!" />
       {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
-    </main>
+    </div>
   );
 }
 
@@ -38,7 +37,7 @@ function SignInButton() {
         <div className="login-section">
         <img className='login-img' src={'/hacker.png'} />
           <h3>Welcome!</h3>  
-          <p><b>NXT Community</b> is a community of 1 amazing developer 😂</p>
+          <p><b>NXT Community</b> is a community of 1 amazing developer😂 ~ Dipendra</p>
           <button className="login-btn btn-google" onClick={signInWithGoogle}>
             <img src={'/google.png'} width="30px" /> 
             Sign in with Google

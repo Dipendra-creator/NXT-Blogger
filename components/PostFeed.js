@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function PostFeed({ posts, admin }) {
   return(
     <>
-      <div class="grid-container">
+      <div className="grid-container">
         {posts ? posts.map((post) => <div class="grid-item"><PostItem post={post} key={post.slug} admin={admin} /></div>) : null}
       </div>
     </>
