@@ -34,7 +34,7 @@ function PostManager() {
       {post && (
         <>
           <section>
-            <h1>{post.title}</h1>
+            <h1>Post Title: {post.title}</h1>
             <p>ID: {post.slug}</p>
 
             <PostForm postRef={postRef} defaultValues={post} preview={preview} />
@@ -59,14 +59,15 @@ function PostForm({ defaultValues, postRef, preview }) {
 
   const { isValid, isDirty } = formState;
 
-  const updatePost = async ({ content, published }) => {
+  const updatePost = async ({ content, published, thumbnail }) => {
     await postRef.update({
       content,
       published,
+      thumbnail,
       updatedAt: serverTimestamp(),
     });
 
-    reset({ content, published });
+    reset({ content, published, thumbnail });
 
     toast.success('Post updated successfully!');
   };
@@ -81,7 +82,20 @@ function PostForm({ defaultValues, postRef, preview }) {
 
       <div className={preview ? styles.hidden : styles.controls}>
         <ImageUploader />
+        <fieldset>
+          <input className={styles.checkbox} name="published" type="checkbox" ref={register} />
+          <label>do you want to Publish?</label>
+        </fieldset>
 
+        <fieldset>
+          <label>Article Thumbnail:</label>
+          <input 
+            type="text" 
+            name="thumbnail"
+            placeholder='link/image url form upload image' 
+            ref={register} 
+          />
+        </fieldset>
         <textarea
           name="content"
           ref={register({
@@ -92,11 +106,6 @@ function PostForm({ defaultValues, postRef, preview }) {
         ></textarea>
 
         {errors.content && <p className="text-danger">{errors.content.message}</p>}
-
-        <fieldset>
-          <input className={styles.checkbox} name="published" type="checkbox" ref={register} />
-          <label>Published</label>
-        </fieldset>
 
         <button type="submit" className="btn-green" disabled={!isDirty || !isValid}>
           Save Changes

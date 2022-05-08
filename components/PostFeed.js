@@ -4,7 +4,7 @@ export default function PostFeed({ posts, admin }) {
   return(
     <>
       <div className="grid-container">
-        {posts ? posts.map((post) => <div class="grid-item"><PostItem post={post} key={post.slug} admin={admin} /></div>) : null}
+        {posts ? posts.map((post) => <div className="grid-item"><PostItem post={post} key={post.slug} admin={admin} /></div>) : null}
       </div>
     </>
   );
@@ -19,6 +19,8 @@ function PostItem({ post, admin = false }) {
 
     <Link href={`/${post.username}/${post.slug}`}>
       <div className="card2">
+        <img className="posts_image" src={ post?.thumbnail || "./photo.jpg"}/>
+        <div className='spacing'/>
         <Link href={`/${post.username}`}>
           <a>
             <strong>By @{post.username}</strong>
@@ -35,15 +37,18 @@ function PostItem({ post, admin = false }) {
         {/* If admin view, show extra controls for user */}
         {admin && (
           <>
-            <Link href={`/admin/${post.slug}`}>
-              <h3>
-                <button className="btn-blue">Edit</button>
-              </h3>
-            </Link>
-
-            {post.published ? <p className="text-success">Live</p> : <p className="text-danger">Unpublished</p>}
+              <div className="center">
+                {post.published ? <p className="text-success">Live</p> : <p className="text-danger">Unpublished</p>}
+                <div style={{width: "10px"}} />
+                <Link href={`/admin/${post.slug}`}>
+                  <h3>
+                    <button className="btn-blue">Edit</button>
+                  </h3>
+                </Link>  
+              </div>          
           </>
         )}
+        <div className='spacing'/>
       </div>
     </Link>
   );

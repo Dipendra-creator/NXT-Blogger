@@ -62,6 +62,7 @@ function CreateNewPost() {
       username,
       published: false,
       content: '# hello world!',
+      thumbnail: './photo.jpg',
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
       heartCount: 0,
@@ -77,6 +78,7 @@ function CreateNewPost() {
 
   return (
     <form onSubmit={createPost}>
+      <h1>Article Name:</h1>
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
