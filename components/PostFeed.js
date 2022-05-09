@@ -20,20 +20,21 @@ function PostItem({ post, admin = false }) {
     <Link href={`/${post.username}/${post.slug}`}>
       <div className="card2">
         <img className="posts_image" src={ post?.thumbnail || "./photo.jpg"}/>
-        <div className='spacing'/>
-        <Link href={`/${post.username}`}>
-          <a>
-            <strong>By @{post.username}</strong>
-          </a>
-        </Link>
-        <h2><a>{post.title}</a></h2>
-        <footer>
-          <span>
-            {wordCount} words. {minutesToRead} min read
-          </span>
-          <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
-        </footer>
-        
+        <div className="card_text">
+          <div className='spacing'/>
+          <Link href={`/${post.username}`}>
+            <a>
+              <strong>By @{post.username}</strong>
+            </a>
+          </Link>
+          <h2><a>{Normalize_Text(post.title)}</a></h2>
+          <footer>
+            <span>
+              {wordCount} words. {minutesToRead} min read
+            </span>
+            <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
+          </footer>
+        </div>        
         {/* If admin view, show extra controls for user */}
         {admin && (
           <>
@@ -52,4 +53,13 @@ function PostItem({ post, admin = false }) {
       </div>
     </Link>
   );
+}
+
+function Normalize_Text(str) {
+  // if text is more than 5 words show only first 5 words then ...
+  if (str.split(/\s+/g).length > 5) {
+    return str.split(/\s+/g).slice(0, 5).join(" ") + "...";
+  } else {
+    return str;
+  }
 }

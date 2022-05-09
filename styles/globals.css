@@ -202,8 +202,13 @@ button.btn-logo {
   border-radius: 8px;
   border: 1px solid;
   box-shadow: 5px 10px #888888;
+  max-width: 450px;
+  max-height: 500px;
 }
 
+.card_text {
+  padding: 20px;
+}
 .posts_image{
   width: 100%;
   height: 220px;
@@ -219,6 +224,12 @@ button.btn-logo {
   margin:auto;
   border-radius: 50%;
   max-width: 150px;
+}
+
+.up-image{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .card-info {
@@ -334,6 +345,7 @@ input[type="file"] {
 
 .grid-container {
   display: grid;
+  justify-content: space-evenly;
   padding: 10px;
   width: 100%;
   grid-template-columns: auto auto auto;
@@ -355,8 +367,18 @@ input[type="file"] {
   font-size: 11px;
 }
 
+.banner {
+  border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
 
 @media only screen and (max-width: 868px) {
+  .card2 {
+    height: 100%;
+  }
   .grid-container {
     grid-template-columns: auto auto;
   }
@@ -366,6 +388,9 @@ input[type="file"] {
 }
 
 @media only screen and (max-width: 520px) {
+  .card2 {
+    height: 100%;
+  }
   .grid-container {
     grid-template-columns: auto;
   }
