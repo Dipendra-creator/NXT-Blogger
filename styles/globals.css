@@ -202,8 +202,8 @@ button.btn-logo {
   border-radius: 8px;
   border: 1px solid;
   box-shadow: 5px 10px #888888;
-  max-width: 450px;
-  max-height: 500px;
+  max-width: 480px;
+  height: 480px;
 }
 
 .card_text {
@@ -376,9 +376,7 @@ input[type="file"] {
 
 
 @media only screen and (max-width: 868px) {
-  .card2 {
-    height: 100%;
-  }
+  
   .grid-container {
     grid-template-columns: auto auto;
   }
@@ -388,9 +386,7 @@ input[type="file"] {
 }
 
 @media only screen and (max-width: 520px) {
-  .card2 {
-    height: 100%;
-  }
+  
   .grid-container {
     grid-template-columns: auto;
   }

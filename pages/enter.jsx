@@ -37,7 +37,7 @@ function SignInButton() {
         <div className="login-section">
         <img className='login-img' src={'/hacker.png'} />
           <h3>Welcome!</h3>  
-          <p><b>NXT/DEEP Community</b> is a community of 1 amazing developer😂 ~ Dipendra</p>
+          <p><b>NXT Community</b> is a community of some amazing developers😂</p>
           <button className="login-btn btn-google" onClick={signInWithGoogle}>
             <img src={'/google.png'} width="30px" /> 
             Sign in with Google
