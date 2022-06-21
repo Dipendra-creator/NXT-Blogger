@@ -2,7 +2,6 @@
 
 - [Live Demo][https://nxt-blogger.vercel.app/]
 
-Become an expert at React, Next.js, and Firebase by building a social blogging community from scratch. 
 
 Build a complex webapp inspired by sites Dev.to and Medium, featuring...
 
