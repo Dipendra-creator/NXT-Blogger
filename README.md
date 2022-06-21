@@ -3,7 +3,7 @@
 - [Live Demo][https://nxt-blogger.vercel.app/]
 
 
-Build a complex webapp inspired by sites Dev.to and Medium, featuring...
+Inspired by sites Dev.to and Medium, featuring...
 
 - 👨‍🎤 Custom Firebase usernames
 - 📰 Bot-friendly content (SEO)
