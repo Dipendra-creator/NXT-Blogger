@@ -2,11 +2,9 @@ import Link from 'next/link';
 
 export default function PostFeed({ posts, admin }) {
   return(
-    <>
       <div className="grid-container">
         {posts ? posts.map((post) => <div className="grid-item"><PostItem post={post} key={post.slug} admin={admin} /></div>) : null}
       </div>
-    </>
   );
 }
 
@@ -23,9 +21,7 @@ function PostItem({ post, admin = false }) {
         <div className="card_text">
           <div className='spacing'/>
           <Link href={`/${post.username}`}>
-            <a>
-              <strong>By @{post.username}</strong>
-            </a>
+             By @{post.username}
           </Link>
           <h2><a>{Normalize_Text(post.title)}</a></h2>
           <footer>
